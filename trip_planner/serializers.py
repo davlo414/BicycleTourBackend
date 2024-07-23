@@ -47,6 +47,8 @@ class TripPOISerializer(serializers.ModelSerializer):
 
 class TripSerializer(serializers.ModelSerializer):
     pois = TripPOISerializer(source='trippoi_set', many=True, read_only=True)
+    number_of_countries = serializers.IntegerField()
+    distance = serializers.IntegerField()
     
     class Meta:
         model = Trip
