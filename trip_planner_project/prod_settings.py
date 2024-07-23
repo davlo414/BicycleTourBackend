@@ -135,3 +135,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://davlo414.github.io'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_METADATA_CLASS': 'rest_framework.metadata.SimpleMetadata'
+}

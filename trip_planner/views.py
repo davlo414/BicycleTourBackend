@@ -61,7 +61,7 @@ from django.views.decorators.csrf import csrf_exempt
 class SetTripPOIPosition(APIView):
     def post(self, request, trippoi_id):
         trippoi = TripPOI.objects.get(id=trippoi_id)
-        position = request.query_params.get('position')
+        position = request.data.get('position')
         TripPOI.objects.filter(trip=trippoi.trip, position=position).update(position=None)
         trippoi.position = position
         trippoi.save()
