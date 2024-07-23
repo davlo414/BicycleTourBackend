@@ -65,6 +65,5 @@ class SetTripPOIPosition(APIView):
         TripPOI.objects.filter(trip=trippoi.trip, position=position).update(position=None)
         trippoi.position = position
         trippoi.save()
-        breakpoint()
 
         return Response()
