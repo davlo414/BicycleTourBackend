@@ -42,6 +42,9 @@ class Trip(models.Model):
         end_coor = (end_poi.poi.location.lat, end_poi.poi.location.lon)
 
         return int(geodesic(start_coor, end_coor).mi) if start_poi and end_poi else 0
+    
+    def number_of_pois(self):
+        return self.pois.all().count()
 
     def __str__(self):
         return self.name
